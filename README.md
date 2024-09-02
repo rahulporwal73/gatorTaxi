@@ -2,7 +2,7 @@
 
 GatorTaxi is a ride-sharing service software designed to efficiently manage pending ride requests using advanced data structures. This project is part of the COP 5536 - Advanced Data Structures course.
 
-For more details, please read 
+For more details, please read GatorTaxi.pdf
 
 ## Problem Statement
 

@@ -1,69 +1,36 @@
-GatorTaxi
-GatorTaxi is a ride-sharing service software that manages pending ride requests efficiently using advanced data structures. This project was developed as part of the COP 5536 - Advanced Data Structures course.
+# GatorTaxi
 
-Problem Statement
-GatorTaxi receives numerous ride requests each day, each characterized by a unique ride number, estimated cost, and total trip duration. The software aims to efficiently manage these ride requests, supporting operations such as:
+GatorTaxi is a ride-sharing service software designed to efficiently manage pending ride requests using advanced data structures. This project is part of the COP 5536 - Advanced Data Structures course.
 
-Printing a specific ride.
-Printing a range of rides.
-Inserting a new ride.
-Getting the next ride with the least cost.
-Canceling a ride.
-Updating the trip duration of a given ride.
-Data Structures Used
-Min-Heap: Stores rides using the ride cost as the key, allowing quick access to the ride with the minimum cost.
-Red-Black Tree (RBT): Stores rides using the ride number as the key, enabling efficient search, insert, and delete operations.
-Files
-gatorTaxi.py - The main driver code for the GatorTaxi service. It reads instructions from an input file provided by the user and performs one of the six functionalities based on the instruction.
+For more details, please read 
 
-minheap.py - Implements a Min-Heap data structure to store rides using ride cost as the key.
+## Problem Statement
 
-RBTree.py - Implements a Red-Black Tree (RBT) to store rides using the ride number as the key. Nodes in the RBT maintain a pointer to the position (index) of the ride in the Min-Heap.
+GatorTaxi receives multiple ride requests daily, each characterized by a unique ride number, estimated cost, and total trip duration. The objective is to manage these ride requests effectively by implementing operations such as:
 
-filewriter.py - Handles writing the output to output_file.txt.
+- Printing a specific ride.
+- Printing a range of rides.
+- Inserting a new ride.
+- Getting the next ride with the lowest cost.
+- Canceling a ride.
+- Updating the trip duration for a given ride.
 
-Instructions to Run
-Place the input text file with the instructions in the same directory as the project files.
+## Data Structures Used
 
-Run the following command in the terminal to execute the program and generate output_file.txt:
+- **Min-Heap**: Stores rides with the ride cost as the key to quickly retrieve the ride with the minimum cost.
+- **Red-Black Tree (RBT)**: Stores rides using the ride number as the key, facilitating efficient search, insert, and delete operations.
 
-python gatorTaxi.py <inputfilename.txt>
+## Project Files
 
-The program will read the instructions from the input file, execute them, and write the output to output_file.txt.
+- `gatorTaxi.py` - The main driver script for the GatorTaxi service. Reads instructions from an input file and executes one of the six core functionalities based on the instructions.
+- `minheap.py` - Implements the Min-Heap data structure, where rides are stored with the ride cost as the key.
+- `RBTree.py` - Implements the Red-Black Tree (RBT) data structure, where rides are stored with the ride number as the key. Each node maintains a pointer to its position in the Min-Heap.
+- `filewriter.py` - Handles writing outputs to `output_file.txt`.
 
-Function Prototypes and Program Structure
+## How to Run
 
-gatorTaxi.py
-insert(heap, ridenumber, ridecost, tripduration): Inserts a ride into the heap.
-getnextride(heap): Retrieves the next ride with the minimum cost.
-cancelride(heap, ridenumber): Cancels a ride based on the ride number.
-printride(heap, ridenumber): Prints details of a specific ride.
-printrides(heap, ridenumber1, ridenumber2): Prints all rides within a given range.
-updatetrip(heap, ridenumber, new_tripduration): Updates the trip duration of a specific ride.
+1. Place the input text file containing the ride instructions in the same directory as the project files.
+2. Run the following command in the terminal to execute the program:
 
-minheap.py
-MinHeap class: Implements the Min-Heap data structure with methods to insert, delete, and retrieve rides.
-Methods include: insert(triplet), getnextride(), deleteride(ridenumber), printride(ridenumber), printrides(ridenumber1, ridenumber2), update(ridenumber, tripduration).
-RBTree.py
-RBT class: Implements the Red-Black Tree data structure with methods for insertion, deletion, and searching rides.
-Node class: Represents each node in the Red-Black Tree.
-Methods include: insert(ridenumber, ridetriplet), delete(ridenumber), find(ridenumber), update_tripduration(ridenumber, newtripduration), printrides(ridenumber1, ridenumber2).
-
-filewriter.py
-File class: Handles writing output to output_file.txt.
-Methods include: filewrite(data).
-
-Time and Space Complexity Analysis
-
-Time Complexity:
-
-Insert: O(log n)
-CancelRide: O(log n)
-Printride: O(log n)
-Printrides: O(s + log n), where s is the number of rides in the range.
-getnextride: O(log n)
-UpdateTrip: O(log n)
-
-Space Complexity:
-Red-Black Tree: O(n)
-Min-Heap: O(n)
+   ```bash
+   python gatorTaxi.py <inputfilename.txt>
